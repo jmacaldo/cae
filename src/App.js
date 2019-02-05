@@ -29,7 +29,7 @@ class App extends Component {
       <div>
         <Nav />
         <Title className="titleclear" name={this.state.data.name} id={this.state.data.id} time={this.state.data.time} />
-        <Details description={this.state.data.description}  />
+        <Details description={this.state.data.description} venue={this.state.data.venue} />
         <Footer />
       </div>
     );

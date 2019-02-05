@@ -47,7 +47,7 @@ class Title extends Component {
               onClose={this.handleClose}
             >
             <DialogTitle id="simple-dialog-title">RSVPs</DialogTitle>
-              <div style={{marginTop: `10%`, marginLeft: `30%`}}>
+              <div >
                 <Rsvp id={this.props.id} />
               </div>
             </Dialog>
@@ -55,8 +55,8 @@ class Title extends Component {
 
         </div>
         <div className="titleRight">
-
         </div>
+
       </div>
     );
   }

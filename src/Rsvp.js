@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import UserAvatar from './UserAvatar'
+import Avatar from '@material-ui/core/Avatar';
 
 class Rsvp extends Component {
 
@@ -9,7 +11,9 @@ class Rsvp extends Component {
     this.namelist = this.namelist.bind(this);
 
     this.state = {
-      rsvp: {}
+      rsvp: {},
+      isLoading: true,
+      avatars: []
     }
   }
 
@@ -19,18 +23,29 @@ class Rsvp extends Component {
       this.setState({
         rsvp: res.data
       })
+    })
+    .then( res => {
 
+      this.setState({isLoading: false})
     })
   }
 
   namelist = () => {
 
-    let arr = []
-    for (let item in this.state.rsvp){
-     arr.push( <div key={item}>this.state.rsvp[item].member.name</div>);
-    }
+      console.log('test');
+      let names = []
+      let avatars = []
+      for (let item in this.state.rsvp){
+        names.push(this.state.rsvp[item].member.name);
+      }
 
-    return arr
+      return names.map((item, index) => (
+        <div key={index} className="rsvplist">
+          <div className="rsvpname">{item}</div>
+        </div>
+      ))
+
+
   }
 
 
@@ -38,11 +53,16 @@ class Rsvp extends Component {
   render() {
     return (
       <div className="rsvpmodal">
-        {this.state.rsvp[0]&&
+        {!this.state.isLoading&&
           <div>
             {this.namelist()}
           </div>
+        }
 
+        {this.state.isLoading&&
+          <div>
+            Loading...
+          </div>
         }
 
 

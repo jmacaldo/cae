@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Map from './Map'
 
 class Details extends Component {
   render() {
@@ -13,7 +14,7 @@ class Details extends Component {
         </div>
         <div className="detailsRight">
           <div className="location">
-            Some location
+            <Map venue={this.props.venue} />
           </div>
           <div className="location">
             Some other widget
