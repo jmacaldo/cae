@@ -14,10 +14,7 @@ class Details extends Component {
         </div>
         <div className="detailsRight">
           <div className="location">
-            <Map venue={this.props.venue} />
-          </div>
-          <div className="location">
-            Some other widget
+            <Map place={this.props.venue} />
           </div>
         </div>
       </div>

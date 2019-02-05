@@ -170,7 +170,7 @@ body {
 
 .detailsRight{
   flex-grow: 1;
-  max-width: 600px;
+  max-width: 340px;
   min-width: 400px;
   /* background-color: blue; */
   padding: 30px;
@@ -191,11 +191,55 @@ body {
 /* Right-hand side widgets */
 
 .mapWidget{
-  
+  display: flex;
+  margin-bottom: 20px;
+
+}
+
+.icons {
+  width: 40px;
+  fill: #ace63c;
+
+}
+
+.address{
+  padding-left: 10px;
+  color: #808080;
+  font-size: 14px;
+  line-height: 1.8em;
+  letter-spacing: 1.3px;
 }
 /* Footer */
 
 .footerContainer{
-  background: green;
-  height: 200px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.footerLeft{
+  font-size: 13px;
+  flex-grow: 5;
+  max-width: 600px;
+  min-width: 400px;
+  padding: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 30px;
+  line-height: 1.8em;
+
+  /* background-color: white; */
+}
+
+.footerRight{
+  font-size: 13px;
+  flex-grow: 1;
+  max-width: 600px;
+  min-width: 400px;
+  /* background-color: white; */
+  padding: 30px;
+  margin: 30px;
 }
