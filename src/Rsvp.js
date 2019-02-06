@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import UserAvatar from './UserAvatar'
-import Avatar from '@material-ui/core/Avatar';
 
 class Rsvp extends Component {
 
@@ -12,43 +10,35 @@ class Rsvp extends Component {
 
     this.state = {
       rsvp: {},
-      isLoading: true,
-      avatars: []
+      isLoading: true
     }
   }
 
   componentWillMount(){
-    axios.get(`https://api.meetup.com/reactjs-dallas/events/pbbdwnyzdbqb/rsvps?&sign=true&photo-host=public`)
+    axios.get(`http://jmacaldo.com/traffic/api/plates/meetuprsvp`)
     .then(res => {
       this.setState({
-        rsvp: res.data
+        rsvp: res.data.data
       })
     })
     .then( res => {
-
       this.setState({isLoading: false})
     })
   }
 
+// Taking RSVP names from state and then pushing them to a helper array that then gets diplayed in the DOM
   namelist = () => {
+    let names = []
+    for (let item in this.state.rsvp){
+      names.push(this.state.rsvp[item].member.name);
+    }
 
-      console.log('test');
-      let names = []
-      let avatars = []
-      for (let item in this.state.rsvp){
-        names.push(this.state.rsvp[item].member.name);
-      }
-
-      return names.map((item, index) => (
-        <div key={index} className="rsvplist">
-          <div className="rsvpname">{item}</div>
-        </div>
-      ))
-
-
+    return names.map((item, index) => (
+      <div key={index} className="rsvplist">
+        <div className="rsvpname">{item}</div>
+      </div>
+    ))
   }
-
-
 
   render() {
     return (
@@ -60,7 +50,7 @@ class Rsvp extends Component {
         }
 
         {this.state.isLoading&&
-          <div>
+          <div className="rsvpLoading">
             Loading...
           </div>
         }

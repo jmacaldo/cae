@@ -16,10 +16,11 @@ class App extends Component {
   }
 
   componentWillMount(){
-    axios.get(`https://api.meetup.com/reactjs-dallas/events?photo-host=public&page=1&sig_id=93703432&sig=f41f61f384af1306625a990f8ec0df41bd4b74d9`)
+    //Custom proxy server is used to get around CORS issue.
+    axios.get(`http://jmacaldo.com/traffic/api/plates/meetup`)
     .then(res => {
       this.setState({
-        data: res.data[0]
+        data: res.data.data[0]
       })
     })
   }
@@ -29,7 +30,7 @@ class App extends Component {
       <div>
         <Nav />
         <Title className="titleclear" name={this.state.data.name} id={this.state.data.id} time={this.state.data.time} />
-        <Details description={this.state.data.description} venue={this.state.data.venue} />
+        <Details description={this.state.data.description} venue={this.state.data.venue} date={this.state.data.time} time={this.state.data.local_time} />
         <Footer />
       </div>
     );

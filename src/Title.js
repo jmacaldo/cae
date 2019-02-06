@@ -39,13 +39,13 @@ class Title extends Component {
               View RSVP
             </Button>
           </div>
-
             <Dialog
               aria-labelledby="simple-modal-title"
               aria-describedby="simple-modal-description"
               open={this.state.open}
               onClose={this.handleClose}
             >
+
             <DialogTitle id="simple-dialog-title">RSVPs</DialogTitle>
               <div >
                 <Rsvp id={this.props.id} />

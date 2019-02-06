@@ -1,10 +1,12 @@
 body {
   background-color: rgb(246,247,248);
   font-family: 'Roboto', sans-serif;
+  margin: 0;
 }
 
 
 .navUp{
+  top:0;
   display: flex;
   z-index: 100%;
   justify-content: space-between;
@@ -16,10 +18,13 @@ body {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: rgb(230,230,230);
+  position: fixed;
 }
 
 .navDown{
+  top:0;
   display: flex;
+  position: fixed;
   z-index: 100;
   justify-content: space-between;
   align-items: center;
@@ -76,27 +81,21 @@ body {
 .titleContainer{
   background-image: url('https://secure.meetupstatic.com/photos/event/a/3/0/e/highres_466181742.jpeg');
   background-repeat:no-repeat;
+  margin-top: 5em;
   background-size:cover;
   background-position: 40% 70%;
-  margin-top: 20px;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-
-
 }
 
 .titleLeft{
-  font-size: 32px;
+  font-size: 2em;
   color: white;
   flex-grow: 5;
-  max-width: 600px;
-  min-width: 400px;
-  padding: 30px;
-  margin: 30px;
+  padding: 2em;
   line-height: 1.8em;
-  /* background-color: red; */
 
 
 
@@ -104,9 +103,6 @@ body {
 
 .titleRight{
   flex-grow: 1;
-  max-width: 600px;
-  min-width: 400px;
-  /* background-color: blue; */
   padding: 30px;
   margin: 30px;
 
@@ -117,14 +113,21 @@ body {
   font-size: 20px;
 }
 
+@media only screen and (min-width: 600px) {
+  .rsvpmodal{
+    min-width: 500px;
+  }
+
+}
+
 .rsvpmodal{
   background-color: white;
-  min-width: 500px;
   height: 50%;
   outline: none;
   padding: 0px;
   margin: 0px;
 }
+
 
 .rsvplist{
   display: flex;
@@ -132,8 +135,8 @@ body {
   margin-bottom: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 2em;
+  margin-right: 2em;
   border-bottom: 1px solid #808080;
 }
 
@@ -141,26 +144,37 @@ body {
   padding-left: 10px;
 }
 
+.rsvpLoading{
+  display: flex;
+  justify-content: center;
+  padding: 4em;
+}
+
 
 
 /* Details Component */
 .mainContainer{
-  margin-top: 20px;
   display: flex;
-  justify-content: space-around;
+  max-width: 1200px;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
+   margin: 0px auto;
+}
+
+.descText{
+  font-weight: 300;
 }
 
 
 .detailsH1{
-  font-size: 25px;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
 .detailsLeft{
-  flex-grow: 5;
+  flex-grow: 1;
   max-width: 600px;
-  min-width: 400px;
   padding: 30px;
   margin: 30px;
   line-height: 1.8em;
@@ -170,17 +184,14 @@ body {
 
 .detailsRight{
   flex-grow: 1;
-  max-width: 340px;
-  min-width: 400px;
+  max-width: 600px;
   /* background-color: blue; */
   padding: 30px;
   margin: 30px;
 }
 
 .location{
-  padding: 30px;
   border-radius: 5px;
-  margin: 30px;
   background-color: white;
   -webkit-box-shadow: 10px 10px 33px -7px rgba(0,0,0,0.20);
   -moz-box-shadow: 10px 10px 33px -7px rgba(0,0,0,0.20);
@@ -193,18 +204,20 @@ body {
 .mapWidget{
   display: flex;
   margin-bottom: 20px;
+  padding: 25px;
 
 }
 
 .icons {
-  width: 40px;
+  width: 1.8em;
   fill: #ace63c;
 
 }
 
 .address{
   padding-left: 10px;
-  color: #808080;
+  width: 100%;
+  font-weight: 300;
   font-size: 14px;
   line-height: 1.8em;
   letter-spacing: 1.3px;
@@ -213,25 +226,27 @@ body {
 
 .footerContainer{
   margin-top: 20px;
+  color: white;
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: white;
+  background-color: rgb(53,62,72);
 }
+
+a {
+  color: white;
+}
+
 
 .footerLeft{
   font-size: 13px;
   flex-grow: 5;
-  max-width: 600px;
-  min-width: 400px;
   padding: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
   margin: 30px;
   line-height: 1.8em;
-
-  /* background-color: white; */
 }
 
 .footerRight{
@@ -239,7 +254,6 @@ body {
   flex-grow: 1;
   max-width: 600px;
   min-width: 400px;
-  /* background-color: white; */
   padding: 30px;
   margin: 30px;
 }
