@@ -234,10 +234,9 @@ body {
   background-color: rgb(53,62,72);
 }
 
-a {
+.footerLink{
   color: white;
 }
-
 
 .footerLeft{
   font-size: 13px;

@@ -17,6 +17,6 @@ Below is a rough breakdown on how long various stages of the development took:
 * Deployment (10 minutes)
 
 ## Tech Used
-This application is bootstrapped with Create-React-App. A mix of custom and Material-UI elements are used. The an Express application serves as a custom proxy back-end server that acts as the middleman between the MeetUp API and the application.
+This application is bootstrapped with Create-React-App. A mix of custom and Material-UI elements are used. An Express application serves as a custom proxy back-end server that acts as the middleman between the MeetUp API and the application.
 
 <img src="http://jmacaldo.com/cae/static/media/mobile.jpg" />
