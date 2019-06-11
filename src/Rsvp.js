@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Avatar from '@material-ui/core/Avatar';
+import noimg from './media/noimg.png'
+
 
 class Rsvp extends Component {
 
@@ -30,14 +33,20 @@ class Rsvp extends Component {
   namelist = () => {
     let names = []
     for (let item in this.state.rsvp){
-      names.push(this.state.rsvp[item].member.name);
+      names.push(this.state.rsvp[item].member);
     }
 
+    console.log(names);
+    
+
     return names.map((item, index) => (
+
+
       <div key={index} className="rsvplist">
-        <div className="rsvpname">{item}</div>
+        <Avatar alt="user" src={item.photo? item.photo.thumb_link : noimg} /> <div className="rsvpname">{item.name}</div>
       </div>
-    ))
+
+    )) // 
   }
 
   render() {

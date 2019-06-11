@@ -22,6 +22,8 @@ class App extends Component {
       this.setState({
         data: res.data.data[0]
       })
+
+      console.log(res)
     })
   }
 
